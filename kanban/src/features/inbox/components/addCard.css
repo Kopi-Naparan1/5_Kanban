@@ -1,0 +1,76 @@
+.add-card {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  font-size: 0.8rem;
+  height: 1.3rem;
+  min-height: 1.3rem;
+
+  width: 100%; /* full width of parent */
+  max-width: 34rem; /* same as .inputField */
+  resize: vertical; /* only allow vertical resizing */
+
+  max-height: 3rem;
+  border: none;
+  border-radius: 0.2rem 0.2rem 0 0;
+  background-color: #e0fbfc;
+  padding-left: 0.3rem;
+  box-shadow: 0 0 2px #3d5a80;
+}
+
+.inputField {
+  font-size: 0.8rem;
+  min-height: 1.3rem;
+
+  width: 100%;
+  max-width: 34rem;
+
+  border: none;
+  border-radius: 0.2rem;
+  background-color: #e0fbfc;
+  padding: 0 0 0 0.3rem;
+  box-shadow: 0 0 2px #3d5a80;
+}
+
+.add-button {
+  font-size: 0.7rem;
+  background-color: #3d5a80a9;
+  color: #e0fbfc;
+  border-radius: 0.2rem;
+  padding: 0.1rem 0.4rem;
+  transition: background-color 0.2s ease;
+}
+
+.add-button:hover {
+  background-color: #3d5a80c6;
+}
+
+.cancel-button {
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: #b9cdcec2;
+  border-radius: 0.2rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+
+  font-size: 0.8rem;
+  min-height: 1.6rem;
+
+  padding: 0.2rem 0.3rem;
+  border: none;
+  border-radius: 0 0 0.2rem 0.2rem;
+  background-color: #d6eeef;
+
+  box-shadow: 0 0 2px #3d5a80;
+}

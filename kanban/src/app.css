@@ -1,0 +1,29 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.split-container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.split-pane {
+  display: flex;
+  min-width: 0;
+  flex: 0 0 auto;
+}
+
+.splitter {
+  cursor: col-resize;
+  background: #2932411f;
+  border-left: 2px solid #29324133;
+  border-right: 2px solid #29324133;
+}
+
+.splitter:hover {
+  background: #29324133;
+}

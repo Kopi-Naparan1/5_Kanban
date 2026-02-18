@@ -1,0 +1,49 @@
+/* =========================================================
+   4) ADD CARD AREA (used by AddCardButton component)
+   ========================================================= */
+
+.add-cancel-buttons-container {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+.add-card-button {
+  margin-top: auto;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 0 0.3rem;
+  font-size: 0.5rem;
+  text-align: left;
+  border-radius: 0.3rem;
+  transition: background 0.3s ease;
+}
+
+.add-card-button:hover {
+  background-color: rgba(0, 0, 0, 0.059);
+}
+
+.board-actions {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.board-add-button {
+  background-color: #3d5a80;
+  color: white;
+  border: none;
+
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.board-cancel-button {
+}
+
+/* MOVE CANDIDATE:
+   These classes are used in `AddCardButton.jsx`, not ShowList itself.
+   Create `kanban/src/features/buttons/add-card-button.css` and move:
+   `.add-card-button`, `.board-actions` (and related add-card classes).
+   Then import that file in: `kanban/src/features/buttons/AddCardButton.jsx`. */

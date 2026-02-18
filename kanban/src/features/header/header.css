@@ -1,0 +1,23 @@
+.header {
+  background-color: #e0fbfc;
+  height: 38px; /* fixed, predictable */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 0 0.3rem;
+
+  align-items: center;
+  font-size: calc(4px + 2vmin);
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #293241;
+}
+
+svg {
+  cursor: pointer;
+  margin: 0.2rem 0.1rem 0 0;
+}
+
+.header h1 {
+  cursor: pointer;
+}

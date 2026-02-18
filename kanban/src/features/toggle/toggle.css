@@ -1,0 +1,54 @@
+.toggle-container {
+  display: flex;
+  background-color: #e0fbfc;
+  border-radius: 0.3rem;
+  bottom: 10px;
+  z-index: 100;
+  gap: 1rem;
+  font-size: 0.5rem;
+  padding: 0.15rem 0.8rem;
+  box-shadow: 0 0 2px #3d5a80;
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+}
+
+.toggle-container button {
+  letter-spacing: -1px;
+  color: #293241;
+  padding: 0 1rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.toggle-label {
+  display: inline-block;
+  transition: transform 0.1s ease;
+}
+
+.toggle-container button:hover {
+  color: #293241;
+  border-radius: 0.3rem;
+  border-color: #98c1d9;
+}
+
+.toggle-container button:hover .toggle-label {
+  transform: scale(1.01);
+}
+
+.inbox.active {
+  background-color: #98c1d98c;
+  color: #293241;
+  padding: 0 1rem;
+  border-radius: 0.3rem;
+  border: none;
+}
+
+.board.active {
+  background-color: #98c1d98c;
+  color: #293241;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 0.3rem;
+}

@@ -1,0 +1,37 @@
+.inbox-container {
+  background-color: #98c1d97e;
+  display: flex;
+  flex: 1; /* ⬅ fills remaining space */
+  overflow: hidden; /* ⬅ prevents scrolling */
+  flex-direction: column;
+  min-height: 0; /* ⬅ critical for flex children */
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 34rem; /* single source of truth */
+  margin: 0 auto;
+  padding: 0.3rem;
+}
+
+.header-container {
+  display: flex;
+  padding-left: 0.3rem;
+  align-items: center;
+  cursor: default;
+}
+
+.inbox-icon {
+  cursor: default;
+}
+
+h2 {
+  font-size: 0.8rem;
+  letter-spacing: -1px;
+  font-weight: 600;
+  color: #293241;
+}

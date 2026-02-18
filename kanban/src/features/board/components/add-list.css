@@ -1,0 +1,14 @@
+.add-list-add-button {
+  display: block;
+  font-size: 0.7rem;
+  height: 1.6rem;
+  width: 7rem;
+
+  border-radius: 0.4rem;
+  box-shadow: 0 0 2px #3d5a80;
+  border: none;
+}
+
+.add-list-add-button.active .add-list-add-button {
+  display: none;
+}

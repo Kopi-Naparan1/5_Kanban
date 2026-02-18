@@ -1,0 +1,10 @@
+#e0fbfc white
+#293241 dark
+#98c1d9 light blue
+#ee6c4d reddish
+#3d5a80 dark blue
+#d6eeef - input area button action color
+#3d5a80a9 - addButton
+98c1d97e
+
+#b9cdce90; - when hovering un colored button

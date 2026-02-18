@@ -1,0 +1,333 @@
+/* =========================================================
+   1️⃣ Overlay / Popover Layout
+   ========================================================= */
+
+.edit-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10vh;
+}
+
+.edit-popover {
+  width: min(90%, 950px);
+  padding: 12px;
+
+  background: #e0fbfc;
+  border-radius: 6px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.464);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================================================
+   2️⃣ Main Action Row (Input + Right Controls)
+   ========================================================= */
+
+.actions-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+
+/* Editable text area */
+.edit-input {
+  flex: 1;
+  resize: vertical;
+
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 0.8rem;
+}
+
+/* Right-side action column */
+.edit-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* =========================================================
+   3️⃣ Save / Close Controls
+   ========================================================= */
+
+.is-save-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.save {
+  background-color: #98c1d9;
+  border-radius: 0.3rem;
+  font-size: 0.5rem;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.2s ease;
+}
+
+.save:hover {
+  background-color: #3d5a80c6;
+  color: #e0fbfc;
+}
+
+.close {
+  transition:
+    background-color 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.close:hover {
+  background-color: #b9cdce90;
+  border-radius: 0.3rem;
+}
+
+/* =========================================================
+   4️⃣ Secondary Options (Labels, Dates, Move, etc.)
+   ========================================================= */
+
+.other-options {
+  display: flex;
+  gap: 6px;
+  margin-left: auto; /* pushes group to the right */
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 6px;
+}
+
+.actions-container button {
+  white-space: nowrap;
+  font-size: 0.5rem;
+  min-width: 0;
+
+  transition:
+    background-color 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.other-options button:hover {
+  background-color: #b9cdce90;
+  border-radius: 0.3rem;
+}
+
+/* =========================================================
+   5️⃣ Date Buttons (Start / Due / Recurring)
+   ========================================================= */
+
+.start-date-button,
+.due-date-button {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+}
+
+.recurring-button {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+}
+
+.button-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+  min-width: 0;
+}
+
+.button-label-move {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  line-height: 1.1;
+  min-width: 0;
+}
+
+.button-date {
+  font-size: 0.5rem;
+  color: #3d5a80;
+  opacity: 0.85;
+  margin-top: 2px;
+  pointer-events: none;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recurring-button .button-date {
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inline-clear {
+  margin-left: 6px;
+  background: transparent;
+  border: none;
+  color: #3d5a80;
+  font-size: 0.65rem;
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+}
+
+.inline-clear:hover {
+  opacity: 1;
+}
+
+/* =========================================================
+   6️⃣ Recurring Panel
+   ========================================================= */
+
+.recurring-panel {
+  border-top: 1px solid rgba(61, 90, 128, 0.25);
+  padding-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recurring-title {
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: #3d5a80;
+}
+
+.recurring-options {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.recurring-option {
+  background: #ffffff;
+  border: 1px solid rgba(61, 90, 128, 0.2);
+  border-radius: 6px;
+  padding: 2px 4px;
+
+  font-size: 0.5rem;
+  text-align: left;
+  box-shadow: 0 0 2px #7a7c804b;
+}
+
+.recurring-option:hover {
+  background-color: #b9cdce90;
+}
+
+.recurring-custom {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 0.5rem;
+  color: #3d5a80;
+}
+
+.recurring-interval,
+.recurring-unit {
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(61, 90, 128, 0.2);
+
+  font-size: 0.5rem;
+}
+
+.recurring-interval {
+  width: 56px;
+}
+
+.recurring-unit {
+  background: #ffffff;
+}
+
+/* =========================================================
+   7️⃣ React Datepicker Overrides
+   ========================================================= */
+
+.react-datepicker {
+  font-size: 0.5rem;
+  background-color: #e0fbfc;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.react-datepicker__header {
+  background-color: #3d5a80;
+  color: #e0fbfc;
+  font-size: 0.5rem;
+}
+
+.react-datepicker__day {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.react-datepicker__day--selected {
+  background-color: #98c1d9;
+  color: #fff;
+}
+
+.weekly-picker {
+  margin-top: 0.75rem;
+}
+
+.weekly-label {
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.weekday-row {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.weekday {
+  width: 0.6rem;
+  height: 1.3rem;
+  border-radius: 0.3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d1d5db;
+  background: white;
+
+  font-size: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.weekday:hover {
+  background: #f3f4f6;
+}
+
+.weekday.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+}
+
+.move-card {
+  padding: 0.25rem;
+}

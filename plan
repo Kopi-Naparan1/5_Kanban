@@ -1,0 +1,12 @@
+Do the boilerplate css
+Make the header (simple)
+make the toggle (for inbox, board)
+make the inbox (simple list of tasks)
+make the board
+make them work (toggle, resizing, and them in one layout) (!Plan this part well) (No card features here)
+Add card features to inbox
+Add features to board (adding of lists: (the list is resizable) )
+Add feature to the board, adding card there directly without draggin the inbox cards
+allow card to be grabbed to a certain list
+
+NOTE if all of the above are done, 80% of the website is done.

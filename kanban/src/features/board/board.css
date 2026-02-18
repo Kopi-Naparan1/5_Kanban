@@ -1,0 +1,62 @@
+.board-container {
+  background-color: #98c1d97e;
+  display: flex;
+  flex: 1; /* â¬… fills remaining space */
+  overflow: hidden; /* â¬… prevents scrolling */
+  flex-direction: column;
+  min-height: 0; /* â¬… critical for flex children */
+}
+
+.lists-outmost-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 85%;
+  max-width: 40rem; /* single source of truth */
+  margin: 0 auto;
+  padding: 0.3rem;
+}
+
+.header-container {
+  display: flex;
+  padding-left: 0.3rem;
+  align-items: center;
+  cursor: default;
+}
+
+.inbox-icon {
+  cursor: default;
+}
+
+h2 {
+  font-size: 0.8rem;
+  letter-spacing: -1px;
+  font-weight: 600;
+  color: #293241;
+}
+
+.boardtask {
+  display: flex;
+  align-items: center; /* vertical center for children */
+  position: relative; /* for absolute check circle */
+  padding: 0.05rem 0.3rem 0.15rem 0.3rem; /* balanced top/bottom padding */
+  width: 100%;
+  max-width: 34rem;
+
+  background-color: #e0fbfc;
+  box-shadow: 0 0 2px #3d5a80;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+
+  /* Ensure text wraps on small screens */
+  word-break: break-word;
+
+  /* Smooth hover transition */
+  transition: box-shadow 0.2s ease;
+}
+
+/* Slight hover shadow for better UX */
+.board-task:hover {
+  box-shadow: 0 1px 4px rgba(61, 90, 128, 0.6);
+}

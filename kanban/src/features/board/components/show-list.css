@@ -1,0 +1,300 @@
+/* =========================================================
+   SHOW LIST STYLES
+   Keep this file focused on ShowList container + list cards.
+   ========================================================= */
+
+/* =========================================================
+   1) BOARD LAYOUT
+   ========================================================= */
+
+.lists-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.list-item-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+
+.list-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 12rem;
+  width: 13rem;
+  max-width: 14rem;
+  max-height: 100%;
+  margin: 0;
+  padding: 0.3rem 0.4rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(41, 50, 65, 0.16);
+  overflow: visible;
+}
+
+.list-container.dragging,
+.collapsed-list.dragging {
+  opacity: 0.45;
+}
+
+.list-focused {
+  z-index: 25;
+}
+
+/* =========================================================
+   2) LIST HEADER + SETTINGS TRIGGER
+   ========================================================= */
+
+.list-header-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.list-drag-handle {
+  width: 18px;
+  height: 24px;
+  padding: 0;
+  margin-top: 0.05rem;
+  border-radius: 0.3rem;
+  color: #293241;
+  font-size: 0.8rem;
+  line-height: 1;
+  cursor: grab;
+}
+
+.list-drag-handle:active {
+  cursor: grabbing;
+}
+
+.list-drag-handle:hover {
+  background-color: rgba(0, 0, 0, 0.059);
+}
+
+.list-title {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.settings-button-wrapper {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  flex-shrink: 0;
+  color: #293241;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-button-wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.059);
+}
+
+.settings-button {
+  width: 18px;
+  height: 18px;
+  color: inherit;
+}
+
+/* =========================================================
+   3) CARDS AREA
+   ========================================================= */
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.18rem 0.2rem 0.28rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 6rem;
+  padding-bottom: 1rem;
+}
+
+.card-container.has-scroll .card {
+  width: calc(100% - 0.3rem);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 34rem;
+  padding: 0.05rem 1rem 0.15rem 0.3rem;
+  background-color: #f5fbfc;
+  border: 2px solid transparent;
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+  word-break: break-word;
+  box-shadow: 0 2px 8px rgba(188, 193, 200, 0.114);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card .task-text {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 0;
+  padding-left: 0.3rem;
+  color: #293241;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.card .check-circle {
+  position: absolute;
+  top: 35%;
+  left: 0.3rem;
+  transform: translateY(-50%);
+  opacity: 0;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card .edit-icon-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 0.4rem;
+  transform: translateY(-50%);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0.2rem 0.2rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.card .edit-icon-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.928);
+  border-radius: 0.5rem;
+  border-color: #98c1d9;
+}
+
+.card .edit-icon {
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  border-color: #98c1d9;
+}
+
+.card:hover .check-circle {
+  opacity: 1;
+}
+
+.card.completed .check-circle,
+.card .check-circle.checked {
+  opacity: 1;
+}
+
+.card:hover .edit-icon {
+  opacity: 1;
+}
+
+.card:hover .task-text {
+  transform: translateX(0.65rem);
+}
+
+.card.completed .task-text {
+  transform: translateX(0.65rem);
+}
+
+/* MOVE CANDIDATE:
+   `.card`, `.task-text`, `.check-circle`, `.edit-icon-wrapper`, `.edit-icon`
+   belong to a future `BoardCard` component stylesheet.
+   If moved, import in: `kanban/src/features/board/components/BoardCard.jsx`
+   and remove these selectors from this file. */
+
+/* =========================================================
+   6) GLOBAL OVERLAY FOR OPEN SETTINGS
+   ========================================================= */
+
+.settings-backdrop {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(1px);
+  z-index: 20;
+  cursor: default;
+}
+
+/* Collapsed erea, can be moved to other file */
+.collapsed-list {
+  width: 2.5rem;
+  min-height: 12rem;
+  padding: 0.4rem 0.2rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(41, 50, 65, 0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collapsed-list-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.collapsed-list-count {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
+
+.card.dragging {
+  opacity: 0.5;
+}
+
+.card-drop-indicator {
+  height: 1.5px;
+  border-radius: 0.2rem;
+  background-color: #3d5a80;
+  margin: 0.05rem 0;
+}
+
+.list-drop-indicator {
+  width: 3px;
+  min-height: 9rem;
+  border-radius: 0.2rem;
+  background-color: #3d5a80;
+}

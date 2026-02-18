@@ -1,0 +1,141 @@
+/* =========================================================
+   5) LIST SETTINGS POPOVER + RENAME UI
+   ========================================================= */
+
+.list-settings-popover {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% - 0.15rem);
+  right: 0;
+  width: 220px;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  z-index: 30;
+}
+
+.list-settings-popover-header-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+}
+
+.list-settings-popover-header-wrapper > button {
+  width: 100%;
+  text-align: left;
+  font-size: 0.7rem;
+  padding: 0.35rem;
+  border-radius: 0.35rem;
+}
+
+.list-settings-popover-header-wrapper > button:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.list-title-input {
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border: 1px solid #98c1d9;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.35rem;
+  outline: none;
+}
+
+.rename-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.rename-actions-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 0.3rem;
+}
+
+.title-input-button {
+  flex: 1;
+  padding: 0.3rem 0.45rem;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
+.title-input-button.save-button {
+  background-color: #98c1d9;
+  color: #fff;
+}
+
+.title-input-button.cancel-button {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.title-input-button:hover {
+  filter: brightness(0.98);
+}
+
+.move-list-position-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0.2rem 0;
+  padding: 0.25rem 0.35rem 0.35rem;
+  border-radius: 0.35rem;
+  background-color: rgba(152, 193, 217, 0.16);
+}
+
+.move-list-position-container label {
+  font-size: 0.65rem;
+  color: #293241;
+}
+
+.move-list-position-controls {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.move-list-position-controls select,
+.move-list-position-controls button {
+  font-size: 0.68rem;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.35rem;
+}
+
+.move-list-position-controls select {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #98c1d9;
+  background: #fff;
+}
+
+.move-list-position-controls button {
+  background-color: #98c1d9;
+  color: #fff;
+}
+
+.move-list-position-controls .action-move-button:hover {
+  background-color: #7fb3d1;
+}
+
+.move-list-position-controls .cancel-move-button {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #293241;
+}
+
+.move-list-position-controls .cancel-move-button:hover {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+
+.move-list-position-controls button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* MOVE CANDIDATE:
+   Popover + rename styles can be split to `show-list-settings.css`
+   when `ListSettingsPopover` becomes a separate component.
+   If moved, import in: `kanban/src/features/board/components/ListSettingsPopover.jsx`. */
