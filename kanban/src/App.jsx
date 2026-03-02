@@ -1,6 +1,6 @@
 import Header from "./features/header/Header";
 import { useRef, useState } from "react";
-import Toggle from "./features/toggle/Toggle";
+import Toggle from "./features/toggle/Toggle.jsx";
 import Board from "../src/features/board/Board";
 
 import "./app.css";
